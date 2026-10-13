@@ -3123,6 +3123,7 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
   .nt-legend-cat span { display: inline-flex; align-items: center; gap: var(--cds-gap-xs); }
   .nt-prose { max-width: 52rem; gap: var(--cds-gap-md); }
   .nt-prose h3 { margin-top: var(--cds-gap-sm); }
+  .nt-prose h4 { margin: var(--cds-gap-xs) 0 0; font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); }
   .nt-prose p, .nt-prose li { margin: 0; font-size: 15px; line-height: 1.65; max-width: 68ch; }
   .nt-prose ul { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
   .nt-prose .nt-v { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -3394,7 +3395,16 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
       <p>Lula ficou à frente em <b class="nt-v" data-source="resumo" data-field="vence_lula" data-fmt="int" data-row="0">—</b> seções, Flávio em <b class="nt-v" data-source="resumo" data-field="vence_flavio" data-fmt="int" data-row="0">—</b>, e houve empate em <b class="nt-v" data-source="resumo" data-field="empates" data-fmt="int" data-row="0">—</b>. Mas a maioria das seções não teve resultado extremo: a margem mediana foi de <b class="nt-v" data-source="analise" data-field="margem_mediana" data-fmt="pp" data-row="0">—</b>, e metade das seções teve margem entre <b class="nt-v" data-source="analise" data-field="margem_q25" data-fmt="pp" data-row="0">—</b> e <b class="nt-v" data-source="analise" data-field="margem_q75" data-fmt="pp" data-row="0">—</b>; só <b class="nt-v" data-source="analise" data-field="secoes_lula_60" data-fmt="int" data-row="0">—</b> seções deram mais de 60% dos válidos a Lula, e só <b class="nt-v" data-source="analise" data-field="secoes_flavio_60" data-fmt="int" data-row="0">—</b> deram mais de 60% a Flávio. As seções de uma mesma escola costumam votar de forma parecida entre si; as diferenças grandes aparecem entre regiões da cidade, como mostram o mapa e o gráfico por zona.</p>
 
       <h3>5. Abstenção: quem não foi votar</h3>
+      <h4>Em percentual</h4>
       <p>A abstenção variou pouco entre as zonas, de <b class="nt-v" data-source="por_zona" data-field="pct_abstencao" data-fmt="pct" data-where="zona=2">—</b> na zona 2 a <b class="nt-v" data-source="por_zona" data-field="pct_abstencao" data-fmt="pct" data-where="zona=69">—</b> na zona 69. Entre os bairros, a diferença é maior. Os campeões de ausência foram Ponta Negra (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=PONTA%20NEGRA">—</b>), Nova Descoberta (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=NOVA%20DESCOBERTA">—</b>), N. S. da Apresentação (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=N.S.DA%20APRESENTA%C3%87%C3%83O">—</b>) e Pajuçara (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=PAJUCARA">—</b>). As menores taxas ficaram em Lagoa Seca (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=LAGOA%20SECA">—</b>), Nordeste (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=NORDESTE">—</b>) e Barro Vermelho (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=BARRO%20VERMELHO">—</b>).</p>
+      <h4>Em números absolutos, o retrato muda</h4>
+      <p>Percentual e quantidade contam histórias diferentes. Ponta Negra, campeã em percentual, teve <b class="nt-v" data-source="por_bairro" data-field="abstencoes" data-fmt="int" data-where="bairro=PONTA%20NEGRA">—</b> ausentes e fica só em <b class="nt-v" data-source="por_bairro" data-field="posicao_abstencoes" data-fmt="ord" data-where="bairro=PONTA%20NEGRA">—</b> lugar entre os <b class="nt-v" data-source="analise" data-field="n_bairros" data-fmt="int" data-row="0">—</b> bairros quando se conta gente. Os bairros com mais eleitores ausentes foram Potengi (<b class="nt-v" data-source="por_bairro" data-field="abstencoes" data-fmt="int" data-where="bairro=POTENGI">—</b>), Lagoa Azul (<b class="nt-v" data-source="por_bairro" data-field="abstencoes" data-fmt="int" data-where="bairro=LAGOA%20AZUL">—</b>), Lagoa Nova (<b class="nt-v" data-source="por_bairro" data-field="abstencoes" data-fmt="int" data-where="bairro=LAGOA%20NOVA">—</b>), N. S. da Apresentação (<b class="nt-v" data-source="por_bairro" data-field="abstencoes" data-fmt="int" data-where="bairro=N.S.DA%20APRESENTA%C3%87%C3%83O">—</b>) e Capim Macio (<b class="nt-v" data-source="por_bairro" data-field="abstencoes" data-fmt="int" data-where="bairro=CAPIM%20MACIO">—</b>). Juntos, esses cinco concentram <b class="nt-v" data-source="analise" data-field="top5_parte_abst" data-fmt="pct0" data-row="0">—</b> de todas as abstenções da cidade.</p>
+      <p>O caso do Potengi mostra bem a diferença: a taxa dele é próxima da média da cidade (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=POTENGI">—</b> contra <b class="nt-v" data-source="resumo" data-field="pct_abstencao" data-fmt="pct" data-row="0">—</b>), mas, por ser o maior colégio eleitoral da cidade (<b class="nt-v" data-source="por_bairro" data-field="aptos" data-fmt="int" data-where="bairro=POTENGI">—</b> aptos), ele sozinho reúne <b class="nt-v" data-source="por_bairro" data-field="pct_do_total_abst" data-fmt="pct0" data-where="bairro=POTENGI">—</b> dos ausentes de Natal. Lagoa Nova é o caso oposto: tem uma das menores taxas (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=LAGOA%20NOVA">—</b>) e mesmo assim é o 3º bairro em número de ausentes.</p>
+      <p>Somando os bairros ao norte do rio Potengi (Potengi, Lagoa Azul, N. S. da Apresentação, Pajuçara, Igapó e Redinha), a Zona Norte teve <b class="nt-v" data-source="analise" data-field="norte_abstencoes" data-fmt="int" data-row="0">—</b> ausentes: <b class="nt-v" data-source="analise" data-field="norte_parte_abst" data-fmt="pct0" data-row="0">—</b> das abstenções de Natal, com <b class="nt-v" data-source="analise" data-field="norte_parte_aptos" data-fmt="pct0" data-row="0">—</b> dos eleitores. Por zona eleitoral, a 69 (<b class="nt-v" data-source="por_zona" data-field="abstencoes" data-fmt="int" data-where="zona=69">—</b> ausentes) e a 3 (<b class="nt-v" data-source="por_zona" data-field="abstencoes" data-fmt="int" data-where="zona=3">—</b>) ficaram quase empatadas em números absolutos, embora a 3 tenha taxa menor (<b class="nt-v" data-source="por_zona" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3">—</b> contra <b class="nt-v" data-source="por_zona" data-field="pct_abstencao" data-fmt="pct" data-where="zona=69">—</b>), porque tem mais eleitores.</p>
+      <p>Uma forma de juntar as duas medidas é comparar cada bairro com o que seria esperado se ele tivesse a taxa média da cidade. Por esse critério, os bairros com mais ausentes além do esperado foram N. S. da Apresentação (<b class="nt-v" data-source="por_bairro" data-field="abst_vs_media" data-fmt="sint" data-where="bairro=N.S.DA%20APRESENTA%C3%87%C3%83O">—</b>), Pajuçara (<b class="nt-v" data-source="por_bairro" data-field="abst_vs_media" data-fmt="sint" data-where="bairro=PAJUCARA">—</b>), Ponta Negra (<b class="nt-v" data-source="por_bairro" data-field="abst_vs_media" data-fmt="sint" data-where="bairro=PONTA%20NEGRA">—</b>) e Lagoa Azul (<b class="nt-v" data-source="por_bairro" data-field="abst_vs_media" data-fmt="sint" data-where="bairro=LAGOA%20AZUL">—</b>). Já Lagoa Nova teve <b class="nt-v" data-source="por_bairro" data-field="abst_vs_media" data-fmt="absint" data-where="bairro=LAGOA%20NOVA">—</b> ausentes a menos do que o esperado.</p>
+      <p>Entre os locais de votação, os maiores em número de ausentes são grandes escolas com muitas seções: a UFRN – Setor de Aulas V, em Lagoa Nova (<b class="nt-v" data-source="por_local" data-field="abstencoes" data-fmt="int" data-where="zona=3&amp;local=2160">—</b> ausentes), a Fundação Bradesco, em Felipe Camarão (<b class="nt-v" data-source="por_local" data-field="abstencoes" data-fmt="int" data-where="zona=4&amp;local=1058">—</b>), a E. M. Emmanoel Bezerra, no Planalto (<b class="nt-v" data-source="por_local" data-field="abstencoes" data-fmt="int" data-where="zona=4&amp;local=1910">—</b>), e a E. M. José de Andrade Frazão, em N. S. da Apresentação (<b class="nt-v" data-source="por_local" data-field="abstencoes" data-fmt="int" data-where="zona=69&amp;local=1520">—</b>).</p>
+      <p>Em resumo: o percentual mostra onde a ausência é mais intensa; o número absoluto mostra onde está a maior parte dos ausentes. Para quem quer entender ou reduzir a abstenção, as duas medidas importam, e apontam para lugares diferentes. A tabela “Por bairro: abstenção”, ao lado do mapa, pode ser ordenada tanto pelo número de abstenções quanto pelo percentual.</p>
+      <h4>Por seção e por local</h4>
       <p>Por seção, metade ficou entre <b class="nt-v" data-source="analise" data-field="abst_q25" data-fmt="pct" data-row="0">—</b> e <b class="nt-v" data-source="analise" data-field="abst_q75" data-fmt="pct" data-row="0">—</b> de abstenção, mas os extremos vão de <b class="nt-v" data-source="analise" data-field="abst_min" data-fmt="pct" data-row="0">—</b> a <b class="nt-v" data-source="analise" data-field="abst_max" data-fmt="pct" data-row="0">—</b>. Deixando de lado a seção do presídio, os locais de votação com maior abstenção foram o Centro Universitário Maurício de Nassau, em Capim Macio (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1856">—</b>), a E. M. Nossa Senhora da Apresentação (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=69&amp;local=1686">—</b>) e três escolas de Ponta Negra: São José (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1732">—</b>), Josefa Botelho (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1716">—</b>) e Jerônimo de Albuquerque (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1724">—</b>).</p>
       <p>Os dados não dizem por que as pessoas faltaram. Explicações comuns para concentrações como a de Ponta Negra são eleitores que mudaram de bairro ou de cidade sem atualizar o título, e áreas com muitos moradores temporários, mas isso precisaria de outros dados para ser confirmado.</p>
 
@@ -3544,6 +3554,7 @@ dash.calc('por_local', {
         pct_lula: l / validos, pct_flavio: f / validos, margem_pp: (l - f) / validos * 100,
         comparecimento: aptos ? total / aptos : null,
         pct_abstencao: aptos ? (aptos - total) / aptos : null,
+        abstencoes: aptos - total,
       };
     });
   },
@@ -3551,13 +3562,13 @@ dash.calc('por_local', {
 
 dash.calc('por_bairro', {
   title: 'Resultado por bairro',
-  description: 'Soma das seções cujos locais de votação ficam em cada bairro (cadastro do TSE): válidos, % de Lula e Flávio Bolsonaro, margem em p.p., comparecimento e abstenções (aptos − comparecimento, em % dos aptos).',
+  description: 'Soma das seções cujos locais de votação ficam em cada bairro (cadastro do TSE): válidos, % de Lula e Flávio Bolsonaro, margem em p.p., comparecimento, abstenções (número e % dos aptos), parte do total de ausentes da cidade, ausentes acima ou abaixo do esperado pela taxa média da cidade e posição no ranking de ausentes.',
   inputs: ['por_secao'],
   fn: (por_secao) => {
     const g = new Map();
     por_secao.forEach((r) => { if (!g.has(r.bairro)) g.set(r.bairro, []); g.get(r.bairro).push(r); });
     const sum = (rs, k) => rs.reduce((a, r) => a + r[k], 0);
-    return [...g].map(([bairro, rs]) => {
+    const rows = [...g].map(([bairro, rs]) => {
       const validos = sum(rs, 'validos'), l = sum(rs, 'lula'), f = sum(rs, 'flavio');
       return {
         bairro, zonas: [...new Set(rs.map((r) => r.zona))].sort((a, b) => a - b).join(', '),
@@ -3569,13 +3580,17 @@ dash.calc('por_bairro', {
         pct_abstencao: (sum(rs, 'aptos') - sum(rs, 'total')) / sum(rs, 'aptos'),
       };
     });
+    // Peso de cada bairro no total de ausentes, ausentes acima/abaixo do esperado pela taxa média da cidade, e posição no ranking absoluto.
+    const aptosCidade = sum(por_secao, 'aptos'), abstCidade = aptosCidade - sum(por_secao, 'total'), taxa = abstCidade / aptosCidade;
+    const ordem = rows.slice().sort((a, b) => b.abstencoes - a.abstencoes).map((r) => r.bairro);
+    return rows.map((r) => ({ ...r, pct_do_total_abst: r.abstencoes / abstCidade, abst_vs_media: r.abstencoes - r.aptos * taxa, posicao_abstencoes: ordem.indexOf(r.bairro) + 1 }));
   },
 });
 
 
 dash.calc('analise', {
   title: 'Números da análise',
-  description: 'Valores citados no texto da análise: diferença de votos, quartis da margem e da abstenção por seção, contagens de seções muito favoráveis a cada candidato, abstenção por faixa de margem, correlações (Pearson) entre abstenção, margem e brancos/nulos, e a parte da vantagem de Lula vinda das zonas 69, 1 e 4.',
+  description: 'Valores citados no texto da análise: abstenção da Zona Norte (bairros ao norte do rio) e peso dos 5 bairros com mais ausentes, diferença de votos, quartis da margem e da abstenção por seção, contagens de seções muito favoráveis a cada candidato, abstenção por faixa de margem, correlações (Pearson) entre abstenção, margem e brancos/nulos, e a parte da vantagem de Lula vinda das zonas 69, 1 e 4.',
   inputs: ['por_secao', 'por_bairro', 'por_zona', 'resumo'],
   fn: (por_secao, por_bairro, por_zona, resumo) => {
     const r = resumo[0];
@@ -3594,6 +3609,14 @@ dash.calc('analise', {
       corr_secao: corr(ab, m), corr_bairro: corr(por_bairro.map((b) => b.pct_abstencao), por_bairro.map((b) => b.margem_pp)),
       corr_abst_bn: corr(ab, por_secao.map((s) => s.pct_brancos_nulos)),
       share_saldo_69_1_4: (saldo(69) + saldo(1) + saldo(4)) / (r.lula - r.flavio),
+      ...(() => {
+        // Zona Norte de Natal: bairros ao norte do rio Potengi (Salinas não tem local de votação).
+        const norte = ['IGAPO', 'LAGOA AZUL', 'N.S.DA APRESENTAÇÃO', 'PAJUCARA', 'POTENGI', 'REDINHA'];
+        const nb = por_bairro.filter((b) => norte.includes(b.bairro));
+        const ab = nb.reduce((s, b) => s + b.abstencoes, 0), ap = nb.reduce((s, b) => s + b.aptos, 0);
+        const top5 = por_bairro.slice().sort((a, b) => b.abstencoes - a.abstencoes).slice(0, 5).reduce((s, b) => s + b.abstencoes, 0);
+        return { norte_abstencoes: ab, norte_pct_abstencao: ab / ap, norte_parte_abst: ab / r.abstencoes, norte_parte_aptos: ap / r.aptos, top5_parte_abst: top5 / r.abstencoes, n_bairros: por_bairro.length };
+      })(),
     }];
   },
 });
@@ -4204,7 +4227,8 @@ const drawMap = (key) => {
 /* ---------- análise: preenche os números citados no texto ---------- */
 const FMT = {
   pct: (v) => pct(v), pct0: (v) => Math.round(v * 100) + '%', int: (v) => nf.format(v), num1: (v) => pf1.format(v),
-  pp: (v) => pp(v), sint: (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + nf.format(Math.abs(v)),
+  pp: (v) => pp(v), sint: (v) => (Math.round(v) > 0 ? '+' : Math.round(v) < 0 ? '−' : '') + nf.format(Math.round(Math.abs(v))), absint: (v) => nf.format(Math.round(Math.abs(v))),
+  ord: (v) => v + 'º',
   corr: (v) => new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v),
 };
 const fillAnalise = () => {
