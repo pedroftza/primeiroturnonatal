@@ -3116,7 +3116,9 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
   .nt-maptools { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm) var(--cds-gap-md); align-items: center; font-size: var(--cds-font-size-caption); }
   .nt-maptools select { font: inherit; font-size: var(--cds-font-size-body); color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-xs) var(--cds-pad-sm); max-width: 100%; }
   .nt-maptools label { display: inline-flex; align-items: center; gap: var(--cds-gap-xs); cursor: pointer; }
-  .nt-legend-ramp { display: flex; flex-direction: column; gap: 4px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); max-width: 22rem; }
+  .nt-legend-ramp { display: flex; flex-direction: column; gap: 4px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .nt-legend-ramp .bar, .nt-legend-ramp .ticks { max-width: 22rem; }
+  .nt-legend-ramp .nt-legend-cat { gap: var(--cds-gap-xs) var(--cds-gap-md); }
   .nt-legend-ramp .bar { height: 10px; border-radius: 5px; border: 1px solid var(--color-border-line); }
   .nt-legend-ramp .ticks { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
   .nt-legend-cat { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm) var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
@@ -3235,7 +3237,7 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
     <div class="nt-mapgrid" id="mapa-votos">
       <div class="nt-card" id="card-mapa-v">
         <h3>Mapa de calor dos votos</h3>
-        <p class="nt-note">Cada círculo é um local de votação (tamanho proporcional ao número de seções); passe o cursor para ver a margem de cada seção dele. A cor de fundo é a margem média das seções próximas.</p>
+        <p class="nt-note">Cada círculo é um local de votação (tamanho proporcional ao número de seções); a cor do círculo indica quem venceu no local e por quanto (forte: 10 p.p. ou mais; fraca: menos de 10 p.p.). Passe o cursor para ver a margem de cada seção dele. A cor de fundo é a margem média das seções próximas.</p>
         <div class="nt-maptools">
           <select id="map-metric-v" aria-label="O que o mapa de votos mostra">
             <option value="margem" selected>Margem Lula − Flávio</option>
@@ -3311,7 +3313,7 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
       </div>
       <div class="nt-card" id="card-strip">
         <h3>Cada seção, por zona</h3>
-        <p class="nt-note">Cada ponto é uma seção; o traço vertical marca a mediana da zona. Passe o cursor para ver o local de votação.</p>
+        <p class="nt-note">Cada ponto é uma seção, colorido pela margem (forte: 10 p.p. ou mais); o traço vertical marca a mediana da zona. Passe o cursor para ver o local de votação.</p>
         <div class="nt-chart dash-skeleton" id="ch-strip" data-source="por_secao"></div>
       </div>
     </div>
@@ -3630,6 +3632,16 @@ const pct2 = (v) => (v == null || isNaN(v)) ? '—' : pf2.format(v * 100) + '%';
 const pp = (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + pf1.format(Math.abs(v)) + ' p.p.';
 const C = () => ({ lula: '#D7332F', flavio: '#2F6BD6' }); /* Lula vermelho, Flávio azul: tons médios legíveis no tema claro e no escuro */
 const sideColor = (m) => (m < 0 ? C().flavio : C().lula);
+// Cor por faixa de margem: forte = vitória por 10 p.p. ou mais; fraca = vitória por menos de 10 p.p.
+const MARGEM_FORTE = 10;
+const MCLASS = [
+  { cor: '#B3191A', rotulo: 'Lula +10 p.p. ou mais', ok: (m) => m >= MARGEM_FORTE },
+  { cor: '#F2A09A', rotulo: 'Lula por menos de 10 p.p.', ok: (m) => m > 0 },
+  { cor: '#BDBDBD', rotulo: 'Empate', ok: (m) => m === 0 },
+  { cor: '#9DBDF5', rotulo: 'Flávio por menos de 10 p.p.', ok: (m) => m > -MARGEM_FORTE },
+  { cor: '#0F3F9E', rotulo: 'Flávio +10 p.p. ou mais', ok: () => true },
+];
+const marginColor = (m) => MCLASS.find((c) => c.ok(m)).cor;
 
 window.ntFormat = { nf, pct, pct2, pp };
 
@@ -3775,13 +3787,13 @@ const drawStrip = () => {
     .attr('cx', (r) => x(r.margem_pp))
     .attr('cy', (r) => y(r.zona) + 4 + jit(r) * (y.bandwidth() - 8))
     .attr('r', W < 420 ? 2 : 2.6)
-    .attr('fill', (r) => sideColor(r.margem_pp)).attr('fill-opacity', 0.55)
+    .attr('fill', (r) => marginColor(r.margem_pp)).attr('fill-opacity', 0.85)
     .on('mouseenter', function (ev, r) {
       d3.select(this).attr('fill-opacity', 1).attr('r', 5);
       const [px, py] = d3.pointer(ev, el);
       tip.show([`Zona ${r.zona} · Seção ${r.secao}`, r.nome_local, `Lula ${pct(r.pct_lula)} · Flávio ${pct(r.pct_flavio)}`, `Margem ${pp(r.margem_pp)} · ${nf.format(r.validos)} válidos`], px, py);
     })
-    .on('mouseleave', function () { d3.select(this).attr('fill-opacity', 0.55).attr('r', W < 420 ? 2 : 2.6); tip.hide(); });
+    .on('mouseleave', function () { d3.select(this).attr('fill-opacity', 0.85).attr('r', W < 420 ? 2 : 2.6); tip.hide(); });
   svg.append('g').selectAll('line').data(zonas).join('line')
     .attr('x1', (z) => x(d3.median(byZ.get(z), (r) => r.margem_pp))).attr('x2', (z) => x(d3.median(byZ.get(z), (r) => r.margem_pp)))
     .attr('y1', (z) => y(z) - 2).attr('y2', (z) => y(z) + y.bandwidth() + 2)
@@ -4028,12 +4040,18 @@ const waterItem = (fill, line) => {
   const i = document.createElement('i'); i.style.background = `repeating-linear-gradient(135deg, ${fill} 0 3px, ${line} 3px 4px)`;
   s.append(i, document.createTextNode('Rio Potengi (traçado do OpenStreetMap)')); return s;
 };
-const drawLegend = (el, m, color, water) => {
+const marginItems = () => MCLASS.map((c) => {
+  const s = document.createElement('span'); s.className = 'nt-legend-water';
+  const i = document.createElement('i'); i.style.cssText = `width:.7rem;height:.7rem;border-radius:50%;background:${c.cor};border:1px solid ${PT_LINE}`;
+  s.append(i, document.createTextNode(c.rotulo)); return s;
+});
+const drawLegend = (el, m, color, water, votos) => {
+  const dots = () => (votos ? marginItems() : [pointItem()]);
   if (m.kind === 'cat') {
     const wrap = document.createElement('div'); wrap.className = 'nt-legend-cat';
     Object.keys(ZPAL).forEach((z) => { const s = document.createElement('span'); const sw = document.createElement('span'); sw.className = 'nt-sw'; sw.style.background = ZPAL[z]; s.append(sw, document.createTextNode('Zona ' + z)); wrap.appendChild(s); });
     if (water) wrap.appendChild(waterItem(water.fill, water.line));
-    wrap.appendChild(pointItem());
+    wrap.append(...dots());
     el.replaceChildren(wrap); return;
   }
   const wrap = document.createElement('div'); wrap.className = 'nt-legend-ramp';
@@ -4051,7 +4069,7 @@ const drawLegend = (el, m, color, water) => {
   bar.style.background = `linear-gradient(to right, ${stops.join(', ')})`;
   ticks.replaceChildren(...labels.map((l) => { const s = document.createElement('span'); s.textContent = l; return s; }));
   wrap.append(bar, ticks);
-  { const row = document.createElement('div'); row.className = 'nt-legend-cat'; if (water) row.appendChild(waterItem(water.fill, water.line)); row.appendChild(pointItem()); wrap.appendChild(row); }
+  { const row = document.createElement('div'); row.className = 'nt-legend-cat'; if (water) row.appendChild(waterItem(water.fill, water.line)); row.append(...dots()); wrap.appendChild(row); }
   el.replaceChildren(wrap);
 };
 Object.keys(MAPS).forEach((k) => ['map-metric-', 'map-zonas-', 'map-pts-'].forEach((id) => document.getElementById(id + k).addEventListener('change', () => {
@@ -4092,7 +4110,7 @@ const drawMap = (key) => {
   const color = m.kind === 'cat' ? null : makeColor(m, mid);
   const RIO = dash.data('rio');
   const water = RIO.status === 'ok' ? { fill: d3.interpolateRgb(mid, '#7C9CB0')(0.6), line: d3.interpolateRgb(mid, '#3E5F73')(0.75) } : null;
-  drawLegend(document.getElementById('map-legend-' + key), m, color, water);
+  drawLegend(document.getElementById('map-legend-' + key), m, color, water, cfg.kind === 'votos');
 
   const pts = L.data.filter((r) => isFinite(r.lat) && isFinite(r.lon)).map((r) => {
     const [x, y] = proj([r.lon, r.lat]);
@@ -4180,7 +4198,7 @@ const drawMap = (key) => {
     const rad = (r) => (W < 480 ? 1.6 : 2) + 1.05 * Math.sqrt(r.secoes);
     svg.append('g').selectAll('circle').data(pts.slice().sort((a, b) => b.r.secoes - a.r.secoes)).join('circle')
       .attr('cx', (p) => p.x).attr('cy', (p) => p.y).attr('r', (p) => rad(p.r))
-      .attr('fill', PT_FILL).attr('fill-opacity', 0.95)
+      .attr('fill', (p) => (cfg.kind === 'votos' ? marginColor(p.r.margem_pp) : PT_FILL)).attr('fill-opacity', 0.95)
       .attr('stroke', PT_LINE).attr('stroke-opacity', 0.9).attr('stroke-width', 1)
       .attr('stroke-dasharray', (p) => (p.r.coord_aproximada ? '2 2' : null))
       .on('mouseenter', function (ev, p) {
