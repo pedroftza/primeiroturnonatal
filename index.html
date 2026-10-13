@@ -3121,6 +3121,11 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
   .nt-legend-ramp .ticks { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
   .nt-legend-cat { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm) var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
   .nt-legend-cat span { display: inline-flex; align-items: center; gap: var(--cds-gap-xs); }
+  .nt-prose { max-width: 52rem; gap: var(--cds-gap-md); }
+  .nt-prose h3 { margin-top: var(--cds-gap-sm); }
+  .nt-prose p, .nt-prose li { margin: 0; font-size: 15px; line-height: 1.65; max-width: 68ch; }
+  .nt-prose ul { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+  .nt-prose .nt-v { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
   @media (max-width: 40rem) { .nt-hide-sm { display: none; } .nt-tbl td.txt { min-width: 6.5rem; } .nt-mg i, .nt-u { display: none; } .nt-tbl td, .nt-tbl th button { padding-inline: 4px; } .nt-tbl { font-size: 11.5px; } }
 </style>
 
@@ -3368,6 +3373,47 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
       <p class="nt-note">A seção 642 da zona 1 funciona dentro de uma unidade prisional (no cadastro do TSE, local do tipo “preso provisório”, chamado Centro de Detenção Provisória feminino de Parnamirim, com endereço em Natal). Ela e outras seções com poucos votos têm percentuais mais voláteis.</p>
     </div>
   </section>
+
+  <section class="nt-sec nt-analise" id="analise">
+    <h2>Análise: o que os números mostram</h2>
+    <div class="nt-card nt-prose">
+      <h3>1. Panorama</h3>
+      <p>Lula terminou o 1º turno em Natal com <b class="nt-v" data-source="resumo" data-field="pct_lula" data-fmt="pct" data-row="0">—</b> dos votos válidos, contra <b class="nt-v" data-source="resumo" data-field="pct_flavio" data-fmt="pct" data-row="0">—</b> de Flávio Bolsonaro: uma vantagem de <b class="nt-v" data-source="analise" data-field="margem_pp" data-fmt="num1" data-row="0">—</b> pontos percentuais, ou <b class="nt-v" data-source="analise" data-field="dif_votos" data-fmt="int" data-row="0">—</b> votos. A disputa foi, na prática, entre os dois: o terceiro colocado, Augusto Cury, teve <b class="nt-v" data-source="totais" data-field="pct_validos" data-fmt="pct" data-where="numero=70">—</b>, seguido de Renan Antonio Ferreira dos Santos (<b class="nt-v" data-source="totais" data-field="pct_validos" data-fmt="pct" data-where="numero=14">—</b>) e Ronaldo Caiado (<b class="nt-v" data-source="totais" data-field="pct_validos" data-fmt="pct" data-where="numero=55">—</b>). Brancos e nulos somaram <b class="nt-v" data-source="resumo" data-field="pct_brancos_nulos" data-fmt="pct" data-row="0">—</b> dos votos registrados.</p>
+      <p>Do outro lado, <b class="nt-v" data-source="resumo" data-field="abstencoes" data-fmt="int" data-row="0">—</b> eleitores aptos não foram votar, uma abstenção de <b class="nt-v" data-source="resumo" data-field="pct_abstencao" data-fmt="pct" data-row="0">—</b>. Na prática, os ausentes foram mais de cinco vezes a diferença entre os dois primeiros colocados. A taxa ficou um pouco abaixo da média nacional divulgada para o 1º turno, de 21,08%, que a imprensa apontou como a mais alta desde 1998.</p>
+
+      <h3>2. Onde cada candidato foi forte</h3>
+      <p>O mapa de votos mostra uma divisão clara. Flávio Bolsonaro venceu num bloco contínuo de bairros centrais, ao sul do rio: Tirol (margem de <b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=TIROL">—</b>), Barro Vermelho (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=BARRO%20VERMELHO">—</b>), Candelária (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=CANDELARIA">—</b>), Petrópolis (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=PETROPOLIS">—</b>) e Lagoa Nova (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=LAGOA%20NOVA">—</b>). Cidade Alta (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=CIDADE%20ALTA">—</b>) e Alecrim (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=ALECRIM">—</b>) ficaram praticamente empatados. O local mais favorável a ele foi a UNI-RN, no Tirol, onde teve <b class="nt-v" data-source="por_local" data-field="pct_flavio" data-fmt="pct" data-where="zona=2&amp;local=2330">—</b> dos válidos.</p>
+      <p>Lula dominou as bordas da cidade e a Zona Norte. As maiores vantagens dele foram em Mãe Luiza (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=MAE%20LUIZA">—</b>), Guarapes (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=GUARAPES">—</b>), Santos Reis (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=SANTOS%20REIS">—</b>), Rocas (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=ROCAS">—</b>) e Redinha (<b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=REDINHA">—</b>). Escolas como a Sen. Dinarte Mariz, em Mãe Luiza (<b class="nt-v" data-source="por_local" data-field="pct_lula" data-fmt="pct" data-where="zona=1&amp;local=1660">—</b> para Lula), e a Almerinda Bezerra Furtado, em Guarapes (<b class="nt-v" data-source="por_local" data-field="pct_lula" data-fmt="pct" data-where="zona=4&amp;local=1996">—</b>), estão entre os locais em que ele teve mais votos proporcionalmente.</p>
+      <p>Por zona, Lula liderou em quatro das cinco. A exceção foi a zona 2, onde Flávio teve <b class="nt-v" data-source="por_zona" data-field="pct_flavio" data-fmt="pct" data-where="zona=2">—</b> contra <b class="nt-v" data-source="por_zona" data-field="pct_lula" data-fmt="pct" data-where="zona=2">—</b> de Lula. A maior vantagem de Lula foi na zona 69, na Zona Norte, com <b class="nt-v" data-source="por_zona" data-field="pct_lula" data-fmt="pct" data-where="zona=69">—</b> dos válidos.</p>
+
+      <h3>3. De onde veio a vantagem de Lula</h3>
+      <p>Somando votos, e não percentuais, a vantagem de <b class="nt-v" data-source="analise" data-field="dif_votos" data-fmt="int" data-row="0">—</b> votos saiu quase toda de três zonas: a 69 deu a Lula <b class="nt-v" data-source="por_zona" data-field="saldo_votos" data-fmt="sint" data-where="zona=69">—</b> votos de saldo, a 1 deu <b class="nt-v" data-source="por_zona" data-field="saldo_votos" data-fmt="sint" data-where="zona=1">—</b> e a 4, <b class="nt-v" data-source="por_zona" data-field="saldo_votos" data-fmt="sint" data-where="zona=4">—</b>. Juntas, respondem por <b class="nt-v" data-source="analise" data-field="share_saldo_69_1_4" data-fmt="pct0" data-row="0">—</b> da diferença final. Nas zonas 3 (<b class="nt-v" data-source="por_zona" data-field="saldo_votos" data-fmt="sint" data-where="zona=3">—</b>) e 2 (<b class="nt-v" data-source="por_zona" data-field="saldo_votos" data-fmt="sint" data-where="zona=2">—</b>), o resultado ficou perto do empate.</p>
+      <p>Entre os bairros, os maiores saldos para Lula vieram de Lagoa Azul (<b class="nt-v" data-source="por_bairro" data-field="saldo_votos" data-fmt="sint" data-where="bairro=LAGOA%20AZUL">—</b> votos), Felipe Camarão (<b class="nt-v" data-source="por_bairro" data-field="saldo_votos" data-fmt="sint" data-where="bairro=FELIPE%20CAMARAO">—</b>) e N. S. da Apresentação (<b class="nt-v" data-source="por_bairro" data-field="saldo_votos" data-fmt="sint" data-where="bairro=N.S.DA%20APRESENTA%C3%87%C3%83O">—</b>). Para Flávio, os maiores saldos foram no Tirol (<b class="nt-v" data-source="por_bairro" data-field="saldo_votos" data-fmt="sint" data-where="bairro=TIROL">—</b>) e em Lagoa Nova (<b class="nt-v" data-source="por_bairro" data-field="saldo_votos" data-fmt="sint" data-where="bairro=LAGOA%20NOVA">—</b>). Bairros muito populosos e com vantagens moderadas pesaram mais no total do que os bairros pequenos com margens extremas.</p>
+
+      <h3>4. Seção por seção: poucos resultados extremos</h3>
+      <p>Lula ficou à frente em <b class="nt-v" data-source="resumo" data-field="vence_lula" data-fmt="int" data-row="0">—</b> seções, Flávio em <b class="nt-v" data-source="resumo" data-field="vence_flavio" data-fmt="int" data-row="0">—</b>, e houve empate em <b class="nt-v" data-source="resumo" data-field="empates" data-fmt="int" data-row="0">—</b>. Mas a maioria das seções não teve resultado extremo: a margem mediana foi de <b class="nt-v" data-source="analise" data-field="margem_mediana" data-fmt="pp" data-row="0">—</b>, e metade das seções teve margem entre <b class="nt-v" data-source="analise" data-field="margem_q25" data-fmt="pp" data-row="0">—</b> e <b class="nt-v" data-source="analise" data-field="margem_q75" data-fmt="pp" data-row="0">—</b>; só <b class="nt-v" data-source="analise" data-field="secoes_lula_60" data-fmt="int" data-row="0">—</b> seções deram mais de 60% dos válidos a Lula, e só <b class="nt-v" data-source="analise" data-field="secoes_flavio_60" data-fmt="int" data-row="0">—</b> deram mais de 60% a Flávio. As seções de uma mesma escola costumam votar de forma parecida entre si; as diferenças grandes aparecem entre regiões da cidade, como mostram o mapa e o gráfico por zona.</p>
+
+      <h3>5. Abstenção: quem não foi votar</h3>
+      <p>A abstenção variou pouco entre as zonas, de <b class="nt-v" data-source="por_zona" data-field="pct_abstencao" data-fmt="pct" data-where="zona=2">—</b> na zona 2 a <b class="nt-v" data-source="por_zona" data-field="pct_abstencao" data-fmt="pct" data-where="zona=69">—</b> na zona 69. Entre os bairros, a diferença é maior. Os campeões de ausência foram Ponta Negra (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=PONTA%20NEGRA">—</b>), Nova Descoberta (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=NOVA%20DESCOBERTA">—</b>), N. S. da Apresentação (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=N.S.DA%20APRESENTA%C3%87%C3%83O">—</b>) e Pajuçara (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=PAJUCARA">—</b>). As menores taxas ficaram em Lagoa Seca (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=LAGOA%20SECA">—</b>), Nordeste (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=NORDESTE">—</b>) e Barro Vermelho (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=BARRO%20VERMELHO">—</b>).</p>
+      <p>Por seção, metade ficou entre <b class="nt-v" data-source="analise" data-field="abst_q25" data-fmt="pct" data-row="0">—</b> e <b class="nt-v" data-source="analise" data-field="abst_q75" data-fmt="pct" data-row="0">—</b> de abstenção, mas os extremos vão de <b class="nt-v" data-source="analise" data-field="abst_min" data-fmt="pct" data-row="0">—</b> a <b class="nt-v" data-source="analise" data-field="abst_max" data-fmt="pct" data-row="0">—</b>. Deixando de lado a seção do presídio, os locais de votação com maior abstenção foram o Centro Universitário Maurício de Nassau, em Capim Macio (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1856">—</b>), a E. M. Nossa Senhora da Apresentação (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=69&amp;local=1686">—</b>) e três escolas de Ponta Negra: São José (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1732">—</b>), Josefa Botelho (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1716">—</b>) e Jerônimo de Albuquerque (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1724">—</b>).</p>
+      <p>Os dados não dizem por que as pessoas faltaram. Explicações comuns para concentrações como a de Ponta Negra são eleitores que mudaram de bairro ou de cidade sem atualizar o título, e áreas com muitos moradores temporários, mas isso precisaria de outros dados para ser confirmado.</p>
+
+      <h3>6. A abstenção tem relação com o voto?</h3>
+      <p>Pouca. Nas seções onde Flávio venceu por 5 pontos ou mais, a abstenção foi de <b class="nt-v" data-source="analise" data-field="abst_g_flavio5" data-fmt="pct" data-row="0">—</b>; nas seções equilibradas, <b class="nt-v" data-source="analise" data-field="abst_g_equilibrio" data-fmt="pct" data-row="0">—</b>; onde Lula venceu por 5 a 15 pontos, <b class="nt-v" data-source="analise" data-field="abst_g_lula5_15" data-fmt="pct" data-row="0">—</b>; e onde venceu por mais de 15, <b class="nt-v" data-source="analise" data-field="abst_g_lula15" data-fmt="pct" data-row="0">—</b>. Há uma leve tendência de abstenção maior onde Lula foi melhor, mas a diferença entre os grupos é de cerca de um ponto percentual.</p>
+      <p>A correlação entre abstenção e margem é praticamente nula seção a seção (<b class="nt-v" data-source="analise" data-field="corr_secao" data-fmt="corr" data-row="0">—</b>) e fraca entre bairros (<b class="nt-v" data-source="analise" data-field="corr_bairro" data-fmt="corr" data-row="0">—</b>). Os contraexemplos são muitos: Barro Vermelho, reduto de Flávio, e Santos Reis, reduto de Lula, estão ambos entre os bairros de menor abstenção (<b class="nt-v" data-source="por_bairro" data-field="pct_abstencao" data-fmt="pct" data-where="bairro=SANTOS%20REIS">—</b> em Santos Reis), enquanto Ponta Negra, onde Lula venceu por <b class="nt-v" data-source="por_bairro" data-field="margem_pp" data-fmt="pp" data-where="bairro=PONTA%20NEGRA">—</b>, teve a maior. Com o voto secreto, também não é possível saber em quem os ausentes votariam: não dá para concluir que a abstenção favoreceu um ou outro candidato.</p>
+
+      <h3>7. Brancos e nulos</h3>
+      <p>Brancos e nulos ficaram em <b class="nt-v" data-source="resumo" data-field="pct_brancos_nulos" data-fmt="pct" data-row="0">—</b> na cidade, mas variaram bastante entre zonas: de <b class="nt-v" data-source="por_zona" data-field="pct_brancos_nulos" data-fmt="pct" data-where="zona=3">—</b> na zona 3 a <b class="nt-v" data-source="por_zona" data-field="pct_brancos_nulos" data-fmt="pct" data-where="zona=69">—</b> na zona 69. Eles quase não acompanham a abstenção (correlação de <b class="nt-v" data-source="analise" data-field="corr_abst_bn" data-fmt="corr" data-row="0">—</b> entre seções), o que sugere que faltar e anular são comportamentos diferentes, concentrados em lugares diferentes.</p>
+
+      <h3>8. Limites desta análise</h3>
+      <ul>
+        <li>Os dados são por seção, não por eleitor. Padrões de bairro não dizem como cada pessoa votou, e conclusões individuais a partir de médias de grupo seriam enganosas.</li>
+        <li>Os mapas mostram onde as pessoas votam (a escola), que nem sempre é perto de onde moram.</li>
+        <li>Os limites das zonas no mapa são aproximados, porque o TSE não publica a geografia das zonas. Sete escolas foram posicionadas no centro do seu bairro, porque a coordenada delas no cadastro do TSE é inválida.</li>
+        <li>Os números de votos, eleitores aptos, comparecimento e abstenção foram conferidos com o arquivo oficial do TSE de detalhe da apuração por seção e batem em todas as seções de Natal.</li>
+      </ul>
+    </div>
+  </section>
 </div>
 
 <script>
@@ -3472,6 +3518,7 @@ dash.calc('por_zona', {
         vence_lula: rs.filter((r) => r.lula > r.flavio).length,
         vence_flavio: rs.filter((r) => r.flavio > r.lula).length,
         aptos: sum(rs, 'aptos'), comparecimento: sum(rs, 'total'),
+        saldo_votos: l - f, pct_brancos_nulos: (sum(rs, 'total') - validos) / sum(rs, 'total'),
         abstencoes: sum(rs, 'aptos') - sum(rs, 'total'),
         pct_abstencao: (sum(rs, 'aptos') - sum(rs, 'total')) / sum(rs, 'aptos'),
       };
@@ -3517,11 +3564,37 @@ dash.calc('por_bairro', {
         secoes: rs.length, validos,
         pct_lula: l / validos, pct_flavio: f / validos, margem_pp: (l - f) / validos * 100,
         comparecimento: sum(rs, 'total') / sum(rs, 'aptos'),
-        aptos: sum(rs, 'aptos'),
+        aptos: sum(rs, 'aptos'), saldo_votos: l - f,
         abstencoes: sum(rs, 'aptos') - sum(rs, 'total'),
         pct_abstencao: (sum(rs, 'aptos') - sum(rs, 'total')) / sum(rs, 'aptos'),
       };
     });
+  },
+});
+
+
+dash.calc('analise', {
+  title: 'Números da análise',
+  description: 'Valores citados no texto da análise: diferença de votos, quartis da margem e da abstenção por seção, contagens de seções muito favoráveis a cada candidato, abstenção por faixa de margem, correlações (Pearson) entre abstenção, margem e brancos/nulos, e a parte da vantagem de Lula vinda das zonas 69, 1 e 4.',
+  inputs: ['por_secao', 'por_bairro', 'por_zona', 'resumo'],
+  fn: (por_secao, por_bairro, por_zona, resumo) => {
+    const r = resumo[0];
+    const q = (arr, p) => { const s = arr.slice().sort((a, b) => a - b), i = (s.length - 1) * p, lo = Math.floor(i), hi = Math.ceil(i); return s[lo] + (s[hi] - s[lo]) * (i - lo); };
+    const corr = (xs, ys) => { const n = xs.length, mx = xs.reduce((a, b) => a + b, 0) / n, my = ys.reduce((a, b) => a + b, 0) / n; let sxy = 0, sxx = 0, syy = 0; for (let i = 0; i < n; i++) { sxy += (xs[i] - mx) * (ys[i] - my); sxx += (xs[i] - mx) ** 2; syy += (ys[i] - my) ** 2; } return sxy / Math.sqrt(sxx * syy); };
+    const grp = (f) => { const rs = por_secao.filter(f), a = rs.reduce((s, x) => s + x.aptos, 0), t = rs.reduce((s, x) => s + x.total, 0); return (a - t) / a; };
+    const m = por_secao.map((s) => s.margem_pp), ab = por_secao.map((s) => s.pct_abstencao);
+    const saldo = (z) => (por_zona.find((x) => x.zona === z) || {}).saldo_votos || 0;
+    return [{
+      dif_votos: r.lula - r.flavio, margem_pp: (r.pct_lula - r.pct_flavio) * 100,
+      margem_mediana: q(m, 0.5), margem_q25: q(m, 0.25), margem_q75: q(m, 0.75),
+      secoes_lula_60: por_secao.filter((s) => s.pct_lula > 0.6).length, secoes_flavio_60: por_secao.filter((s) => s.pct_flavio > 0.6).length,
+      abst_q25: q(ab, 0.25), abst_q75: q(ab, 0.75), abst_min: Math.min(...ab), abst_max: Math.max(...ab),
+      abst_g_flavio5: grp((s) => s.margem_pp <= -5), abst_g_equilibrio: grp((s) => s.margem_pp > -5 && s.margem_pp <= 5),
+      abst_g_lula5_15: grp((s) => s.margem_pp > 5 && s.margem_pp <= 15), abst_g_lula15: grp((s) => s.margem_pp > 15),
+      corr_secao: corr(ab, m), corr_bairro: corr(por_bairro.map((b) => b.pct_abstencao), por_bairro.map((b) => b.margem_pp)),
+      corr_abst_bn: corr(ab, por_secao.map((s) => s.pct_brancos_nulos)),
+      share_saldo_69_1_4: (saldo(69) + saldo(1) + saldo(4)) / (r.lula - r.flavio),
+    }];
   },
 });
 
@@ -4127,6 +4200,27 @@ const drawMap = (key) => {
   }
 };
 
+
+/* ---------- análise: preenche os números citados no texto ---------- */
+const FMT = {
+  pct: (v) => pct(v), pct0: (v) => Math.round(v * 100) + '%', int: (v) => nf.format(v), num1: (v) => pf1.format(v),
+  pp: (v) => pp(v), sint: (v) => (v > 0 ? '+' : v < 0 ? '−' : '') + nf.format(Math.abs(v)),
+  corr: (v) => new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v),
+};
+const fillAnalise = () => {
+  document.querySelectorAll('#analise [data-fmt]').forEach((el) => {
+    const s = dash.data(el.dataset.source);
+    if (s.status !== 'ok') { el.textContent = '—'; return; }
+    let row;
+    if (el.dataset.where) {
+      const conds = el.dataset.where.split('&').map((c) => c.split('=').map(decodeURIComponent));
+      row = s.data.find((r) => conds.every(([k, v]) => String(r[k]) === v));
+    } else row = s.data[Number(el.dataset.row || 0)];
+    const v = row ? row[el.dataset.field] : null;
+    el.textContent = v == null || Number.isNaN(v) ? '—' : FMT[el.dataset.fmt](v);
+  });
+};
+
 /* ---------- links ---------- */
 let linked = false;
 const goLink = () => {
@@ -4150,6 +4244,7 @@ dash.onData(() => {
   drawAbstTable();
   drawMap('v');
   drawMap('a');
+  fillAnalise();
   if (dash.data('por_secao').status === 'ok') goLink();
 });
 </script>
