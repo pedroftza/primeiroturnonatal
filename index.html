@@ -338,7 +338,6 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
 1,639,1686,ESCOLA MUNICIPAL PROFA. LAURA MAIA,"AV. 25 DE DEZEMBRO, 14",67,38,6,1,2,0,0,0,0,0,0,0,0,2,1
 1,640,2577,ESCOLA ESTADUAL PROFA. DULCE WANDERLEY,"RUA CÍCERO, 500",114,70,6,8,1,1,0,0,0,0,0,1,0,3,5
 1,641,2470,COMPLEXO CULTURAL DA UERN,AVENIDA DR JOAO MEDEIROS FILHO SN,120,101,4,12,2,0,0,0,0,0,0,0,0,1,6
-1,642,2631,CENTRO DE DETENÇÃO PROVISÓRIA DE PARNAMIRIM (FEMININO),"AV. ITAPETINGA,S/N, SANTARÉM",36,6,1,0,0,0,0,0,0,0,0,0,0,3,0
 2,7,2275,ÊXITO COLÉGIO E CURSO,"AV. PRESIDENTE BANDEIRA, 658",91,91,5,2,2,0,0,0,0,0,0,0,0,2,9
 2,14,1112,INSTITUTO DA SAGRADA FAMILIA,"RUA CORONEL ESTEVAM, 1415",106,99,3,4,3,0,0,0,0,0,0,0,0,3,6
 2,15,1112,INSTITUTO DA SAGRADA FAMILIA,"RUA CORONEL ESTEVAM, 1415",104,105,8,4,3,0,1,0,0,0,0,0,0,1,5
@@ -1834,7 +1833,6 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
 1,639,PRAIA DO MEIO,-5.779955,-35.194505,135
 1,640,REDINHA,-5.745689,-35.206693,246
 1,641,POTENGI,-5.755058,-35.240298,266
-1,642,POTENGI,-5.754934,-35.241603,63
 2,7,ALECRIM,-5.799959,-35.216243,257
 2,14,ALECRIM,-5.797551,-35.218416,276
 2,15,ALECRIM,-5.797551,-35.218416,283
@@ -3215,7 +3213,7 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
       <div class="nt-card" id="card-abst-tab">
         <h3>Números por zona</h3>
         <p class="nt-note">Eleitores aptos para a eleição federal, somando as seções agregadas à seção principal; compareceram = votos registrados para presidente (inclui brancos e nulos).</p>
-        <p class="nt-note">Conferido com o arquivo oficial do TSE “Detalhe da apuração por seção eleitoral – 2026” (gerado em 06/10/2026): aptos, comparecimento e abstenções são idênticos em todas as seções de Natal.</p>
+        <p class="nt-note">Conferido com o arquivo oficial do TSE “Detalhe da apuração por seção eleitoral – 2026” (gerado em 06/10/2026): aptos, comparecimento e abstenções são idênticos em todas as seções consideradas. O estudo exclui uma seção especial instalada numa unidade prisional, por isso os totais da cidade ficam um pouco abaixo dos oficiais.</p>
         <div class="nt-tblwrap" style="max-height:none">
           <table class="nt-tbl" id="tb-abst" data-source="por_zona" data-row-key="zona">
             <thead><tr>
@@ -3373,7 +3371,7 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
           <tbody></tbody>
         </table>
       </div>
-      <p class="nt-note">A seção 642 da zona 1 funciona dentro de uma unidade prisional (no cadastro do TSE, local do tipo “preso provisório”, chamado Centro de Detenção Provisória feminino de Parnamirim, com endereço em Natal). Ela e outras seções com poucos votos têm percentuais mais voláteis.</p>
+      <p class="nt-note">Seções com poucos votos têm percentuais mais voláteis.</p>
     </div>
   </section>
 
@@ -3407,7 +3405,7 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
       <p>Entre os locais de votação, os maiores em número de ausentes são grandes escolas com muitas seções: a UFRN – Setor de Aulas V, em Lagoa Nova (<b class="nt-v" data-source="por_local" data-field="abstencoes" data-fmt="int" data-where="zona=3&amp;local=2160">—</b> ausentes), a Fundação Bradesco, em Felipe Camarão (<b class="nt-v" data-source="por_local" data-field="abstencoes" data-fmt="int" data-where="zona=4&amp;local=1058">—</b>), a E. M. Emmanoel Bezerra, no Planalto (<b class="nt-v" data-source="por_local" data-field="abstencoes" data-fmt="int" data-where="zona=4&amp;local=1910">—</b>), e a E. M. José de Andrade Frazão, em N. S. da Apresentação (<b class="nt-v" data-source="por_local" data-field="abstencoes" data-fmt="int" data-where="zona=69&amp;local=1520">—</b>).</p>
       <p>Em resumo: o percentual mostra onde a ausência é mais intensa; o número absoluto mostra onde está a maior parte dos ausentes. Para quem quer entender ou reduzir a abstenção, as duas medidas importam, e apontam para lugares diferentes. A tabela “Por bairro: abstenção”, ao lado do mapa, pode ser ordenada tanto pelo número de abstenções quanto pelo percentual.</p>
       <h4>Por seção e por local</h4>
-      <p>Por seção, metade ficou entre <b class="nt-v" data-source="analise" data-field="abst_q25" data-fmt="pct" data-row="0">—</b> e <b class="nt-v" data-source="analise" data-field="abst_q75" data-fmt="pct" data-row="0">—</b> de abstenção, mas os extremos vão de <b class="nt-v" data-source="analise" data-field="abst_min" data-fmt="pct" data-row="0">—</b> a <b class="nt-v" data-source="analise" data-field="abst_max" data-fmt="pct" data-row="0">—</b>. Deixando de lado a seção do presídio, os locais de votação com maior abstenção foram o Centro Universitário Maurício de Nassau, em Capim Macio (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1856">—</b>), a E. M. Nossa Senhora da Apresentação (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=69&amp;local=1686">—</b>) e três escolas de Ponta Negra: São José (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1732">—</b>), Josefa Botelho (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1716">—</b>) e Jerônimo de Albuquerque (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1724">—</b>).</p>
+      <p>Por seção, metade ficou entre <b class="nt-v" data-source="analise" data-field="abst_q25" data-fmt="pct" data-row="0">—</b> e <b class="nt-v" data-source="analise" data-field="abst_q75" data-fmt="pct" data-row="0">—</b> de abstenção, mas os extremos vão de <b class="nt-v" data-source="analise" data-field="abst_min" data-fmt="pct" data-row="0">—</b> a <b class="nt-v" data-source="analise" data-field="abst_max" data-fmt="pct" data-row="0">—</b>. Os locais de votação com maior abstenção foram o Centro Universitário Maurício de Nassau, em Capim Macio (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1856">—</b>), a E. M. Nossa Senhora da Apresentação (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=69&amp;local=1686">—</b>) e três escolas de Ponta Negra: São José (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1732">—</b>), Josefa Botelho (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1716">—</b>) e Jerônimo de Albuquerque (<b class="nt-v" data-source="por_local" data-field="pct_abstencao" data-fmt="pct" data-where="zona=3&amp;local=1724">—</b>).</p>
       <p>Os dados não dizem por que as pessoas faltaram. Explicações comuns para concentrações como a de Ponta Negra são eleitores que mudaram de bairro ou de cidade sem atualizar o título, e áreas com muitos moradores temporários, mas isso precisaria de outros dados para ser confirmado.</p>
 
       <h3>6. A abstenção tem relação com o voto?</h3>
@@ -3422,7 +3420,8 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
         <li>Os dados são por seção, não por eleitor. Padrões de bairro não dizem como cada pessoa votou, e conclusões individuais a partir de médias de grupo seriam enganosas.</li>
         <li>Os mapas mostram onde as pessoas votam (a escola), que nem sempre é perto de onde moram.</li>
         <li>Os limites das zonas no mapa são aproximados, porque o TSE não publica a geografia das zonas. Sete escolas foram posicionadas no centro do seu bairro, porque a coordenada delas no cadastro do TSE é inválida.</li>
-        <li>Os números de votos, eleitores aptos, comparecimento e abstenção foram conferidos com o arquivo oficial do TSE de detalhe da apuração por seção e batem em todas as seções de Natal.</li>
+        <li>Os números de votos, eleitores aptos, comparecimento e abstenção foram conferidos com o arquivo oficial do TSE de detalhe da apuração por seção e batem em todas as seções consideradas.</li>
+        <li>O estudo exclui a seção especial instalada numa unidade prisional (zona 1, seção 642). Por isso, os totais aqui ficam ligeiramente abaixo dos totais oficiais de Natal.</li>
       </ul>
     </div>
   </section>
